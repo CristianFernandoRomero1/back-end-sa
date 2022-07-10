@@ -2,6 +2,7 @@ import express from 'express';
 import config from './config';
 import cors from 'cors';
 import userRoutes from './routes/login.js';
+import inspectorRoutes from './routes/inspector/inspection.js';
 
 import bodyParser from 'body-parser';
 const app = express();
@@ -12,5 +13,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.set('port', config.port);
 app.use(userRoutes);
+app.use(inspectorRoutes);
 
 export default app;
